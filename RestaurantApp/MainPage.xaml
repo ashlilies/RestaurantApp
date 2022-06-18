@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantApp.MainPage"
+             Title="Restaurant Admin">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button x:Name="addItemButton" Text="Add Item"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button x:Name="viewDishesButton" Text="Dishes" />
+                <Button x:Name="viewDrinksButton" Text="Drinks" />
+            </StackLayout>
+            <ListView x:Name="itemsList" RowHeight="50">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!-- use a GridLayout to get around cut off itemtemplate? -->
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                                    <Label Text="{Binding Name}" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" FontSize="Medium" IsVisible="True" />
+                                    <Label Text="$" HorizontalOptions="End" HorizontalTextAlignment="End" FontSize="Medium" />
+                                    <Label Text="{Binding UnitPrice}" HorizontalOptions="End" HorizontalTextAlignment="End" FontAttributes="Bold" FontSize="Medium" />
+                                </StackLayout>
+                                <Label Text="{Binding Description}" FontAttributes="Italic" VerticalOptions="End" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

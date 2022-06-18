@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantApp.Pages.Patron.ViewOrderDetailPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="cartList" RowHeight="50">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!-- use a GridLayout to get around cut off itemtemplate? -->
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                                    <Label Text="{Binding Quantity}" FontSize="Medium" />
+                                    <Label Text="{Binding ItemName}" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" FontSize="Medium" IsVisible="True" />
+                                    <Label Text="$" HorizontalOptions="End" HorizontalTextAlignment="End" FontSize="Medium" />
+                                    <Label Text="{Binding TotalPrice}" HorizontalOptions="End" HorizontalTextAlignment="End" FontAttributes="Bold" FontSize="Medium" />
+                                </StackLayout>
+                                <Label Text="{Binding ItemDescription}" FontAttributes="Italic" VerticalOptions="End" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label x:Name="totalPriceLabel" Text="{Binding CartTotalPrice, StringFormat='{0:C2}'}" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Medium" />
+            <!--<Label Text-->
+            <Button x:Name="confirmOrderButton" Text="Confirm Order" />
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

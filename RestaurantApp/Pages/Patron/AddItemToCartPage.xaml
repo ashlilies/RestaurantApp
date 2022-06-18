@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantApp.Pages.Patron.AddItemToCartPage"
+             Title="Add Item to Cart">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="Category" />
+            <Label x:Name="category" FontAttributes="Bold" FontSize="Medium" />
+            <Label Text="Name" />
+            <Label x:Name="itemName" FontAttributes="Bold" FontSize="Medium"/>
+            <Label Text="Unit Price" />
+            <Label x:Name="unitPrice" FontAttributes="Bold" FontSize="Medium"/>
+            <Label Text="Description" />
+            <Label x:Name="itemDescription" FontAttributes="Bold" FontSize="Medium"/>
+
+            <Label Text="Quantity" />
+            <Entry x:Name="quantityEntry" Text="1" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button x:Name="removeQuantityButton" Text="-" />
+                <Button x:Name="addQuantityButton" Text="+" />
+            </StackLayout>
+
+            <Button x:Name="addButton" Text="Add to Cart" />
+            <Button x:Name="cancelButton" Text="Cancel" BackgroundColor="Red" TextColor="White" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

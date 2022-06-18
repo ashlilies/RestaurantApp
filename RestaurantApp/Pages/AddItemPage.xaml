@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantApp.Pages.AddItemPage"
+             Title="Add an Item">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Category" />
+            <Picker x:Name="categoryPicker" />
+            <Label Text="Name" />
+            <Entry x:Name="itemName" Placeholder="Name"/>
+            <Label Text="Unit Price" />
+            <Entry x:Name="unitPriceEntry" Placeholder="Unit Price"/>
+            <Label Text="Description" />
+            <Entry x:Name="itemDescription" Placeholder="Description"/>
+            <Button x:Name="addButton" Text="ADD" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
